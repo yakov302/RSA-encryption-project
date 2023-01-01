@@ -282,10 +282,10 @@ void generate_keys(int num_of_bits)
 
         d = impl::extended_euclidean(phi, e);
     }
-    std::cout << GREEN << "\n------------RSA OUTPOT----------\n" << NORMAL;
-    std::cout << "\nPublic key: \n" << "e : " << e << "\nn : " << n << "\n";
-    std::cout << "\nPrivate key: \n" << "d : " << d << "\nn : " << n << "\n\n";
-    std::cout << GREEN << "--------------------------------\n" << NORMAL;
+
+    std::cout << "\n" << GREEN; 
+    std::cout << "Public key \n" << "e: " << e << "\nn: " << n << "\n";
+    std::cout << "\nPrivate key \n" << "d: " << d << "\nn: " << n << "\n";
 }
 
 BigInt encrypt(BigInt& e, BigInt& n, char* message)

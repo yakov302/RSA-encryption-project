@@ -8,9 +8,8 @@ namespace impl
 
 void print_str_and_big_int(std::string message, BigInt big_int)
 {
-    std::cout << GREEN << "\n------------RSA OUTPOT----------\n\n" << NORMAL;
-    std::cout << message << big_int << "\n\n";
-    std::cout << GREEN << "--------------------------------\n" << NORMAL;
+    std::cout << "\n" << GREEN; 
+    std::cout << message << big_int << "\n" << NORMAL;
 }
 
 void menu()
@@ -123,7 +122,7 @@ void action(int choice)
         break; 
 
     default:
-        print_str_and_big_int("Invalid choice! ", BigInt());
+        std::cout << RED << "\nRSA ERROR: Invalid choice" << NORMAL << "\n";
         break;
     }
 }
