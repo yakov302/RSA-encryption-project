@@ -169,6 +169,23 @@ BigInt set_finel_big_int(std::string& string)
     return big_int;
 }
 
+void enter_chars(int& char_index, int& message_length, std::string& string, char* message)
+{
+    for(char i = 0; i < message_length; ++i)
+    {
+        std::string temp_string = std::to_string(*(char*)(message + char_index + i));
+        enter_num_of_digits_in_the_int(temp_string, string);
+        string += temp_string;
+    }
+}
+
+void enter_ints(int& char_index, std::string& string, char* message)
+{
+    std::string temp_string = std::to_string(*(int*)(message + char_index));
+    enter_num_of_digits_in_the_int(temp_string, string);
+    string += temp_string;
+}
+
 BigInt convert_message_to_big_int(char* message)
 {
     int message_length = strlen(message);
@@ -180,9 +197,11 @@ BigInt convert_message_to_big_int(char* message)
     int char_index = 0;
     for(int i = 0; i < num_of_int; ++i)
     {
-        std::string temp_string = std::to_string(*(int*)(message + char_index));
-        enter_num_of_digits_in_the_int(temp_string, string);
-        string += temp_string;
+        if(message_length < 3)
+            enter_chars(char_index, message_length, string, message);
+        else
+            enter_ints(char_index, string, message);
+
         char_index += sizeof(int);
     }
 
