@@ -3,6 +3,8 @@
 namespace rsa
 {
 
+extern bool stop;
+
 std::random_device seed;    
 static std::mt19937_64 seed_engine(seed());
 std::uniform_int_distribution<int> distribution_int;
@@ -302,6 +304,8 @@ void generate_keys(int num_of_bits)
         d = impl::extended_euclidean(phi, e);
     }
 
+    stop = true;
+    usleep(100000);
     std::cout << "\n" << GREEN; 
     std::cout << "Public key \n" << "e: " << e << "\nn: " << n << "\n";
     std::cout << "\nPrivate key \n" << "d: " << d << "\nn: " << n << "\n";

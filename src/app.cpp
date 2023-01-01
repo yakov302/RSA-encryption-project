@@ -3,8 +3,73 @@
 namespace rsa
 {
 
+bool stop;
+
 namespace impl
 {
+
+void draw(int i, int pos)
+{
+    if (i < pos) std::cout << "-";
+    else if (i == pos) std::cout;
+    else std::cout << " ";
+}
+
+void back_to_beginning()
+{
+    std::cout << "\r";
+    std::cout.flush();
+    usleep(50000);
+}
+
+void set_progress(float& progress)
+{
+    progress += 0.05; 
+    if(progress  > 1)
+        progress = 0;
+}
+
+void delete_bar()
+{
+    std::cout << "\r";
+    std::cout.flush();
+    for (int i = 0; i < PROGRESS_BAR_WIDTH*2; ++i) 
+        std::cout << " ";
+}
+
+void* progress_bar(void*)
+{
+    float progress = 0;
+
+    while (!stop) 
+    {
+        std::cout << YELLOW << "RSA processing ";
+        int pos = PROGRESS_BAR_WIDTH * progress;
+
+        for (int i = 0; i < PROGRESS_BAR_WIDTH; ++i) 
+            draw(i, pos);
+
+        back_to_beginning();
+        set_progress(progress);
+    }
+
+    delete_bar();
+    return 0;
+}
+
+void draw_progress_bar()
+{
+    stop = false;
+    pthread_t thread;
+    std::cout << "\n";
+    pthread_create(&thread, 0, progress_bar, 0);
+}
+
+void delete_progress_bar()
+{
+    stop = true;
+    usleep(100000);
+}
 
 void print_str_and_big_int(std::string message, BigInt big_int)
 {
@@ -14,7 +79,7 @@ void print_str_and_big_int(std::string message, BigInt big_int)
 
 void menu()
 {
-    std::cout << YELLOW << "\n------------RSA MENU------------\n\n" << NORMAL;
+    std::cout << YELLOW << "\n-------------RSA MENU-------------\n\n" << NORMAL;
     std::cout <<" 1 - Generate big int" << "\n";
     std::cout <<" 2 - Check if big int is prime" << "\n";
     std::cout <<" 3 - Generate RSA key pair"  << "\n";
@@ -28,7 +93,11 @@ void generate_big_int()
     int num_of_bits;
     std::cout << "Select number of bits: ";
     std::cin >> num_of_bits;
+
+    draw_progress_bar();
     BigInt big_int = random_big_int(num_of_bits);
+    delete_progress_bar();
+
     print_str_and_big_int("Big int: ", big_int);
 }
 
@@ -38,7 +107,11 @@ void check_if_big_int_is_prime()
     std::cout << "Enter big int: ";
     std::cin >> string;
 
-    if(is_big_int_prime(BigInt(string)))
+    draw_progress_bar();
+    bool res = is_big_int_prime(BigInt(string));
+    delete_progress_bar();
+
+    if(res)
         print_str_and_big_int("Big int is prime", BigInt());
     else
         print_str_and_big_int("Big int is not prime", BigInt());
@@ -49,6 +122,8 @@ void generate_rsa_key_pair()
     int num_of_bits;
     std::cout << "Select number of bits: ";
     std::cin >> num_of_bits;
+
+    draw_progress_bar();
     generate_keys(num_of_bits);
 }
 
@@ -69,7 +144,10 @@ void encrypt_message()
     std::cin >> n_string;
     BigInt n = n_string;
 
+    draw_progress_bar();
     BigInt c = encrypt(e, n, m);
+    delete_progress_bar();
+
     if(c.num_of_digits() > 0)
         print_str_and_big_int("Cypher code: ", c);
 }
@@ -91,14 +169,16 @@ void decrypt_cypher_code()
     std::cin >> n_string;
     BigInt n = n_string;
 
+    draw_progress_bar();
     std::string message = "Message: ";
     message += decrypt(d, n, c);
+    delete_progress_bar();
+
     print_str_and_big_int(message, BigInt());
 }
 
 void action(int choice)
 {
-
     switch (choice)
     {
     case GENERATE_BIG_INT:

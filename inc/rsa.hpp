@@ -2,6 +2,7 @@
 
 #include <random>
 #include <vector>
+#include <unistd.h>
 
 #include "../inc/big_integer.hpp"
 
