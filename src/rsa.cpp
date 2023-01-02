@@ -204,6 +204,7 @@ BigInt convert_message_to_big_int(char* message)
         else
             enter_ints(char_index, string, message);
 
+        message_length -= 4;
         char_index += sizeof(int);
     }
 
