@@ -21,6 +21,7 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
    * 4096 bits - about
   
 ### Requirements
+   - linux (Ubuntu) CLI
    - c++ compiler
   
 ### Run the application   
