@@ -21,7 +21,7 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
    * 4096 bits - about
   
 ### Requirements
-   - c++ compiler
+   > c++ compiler
   
 ### Run the application   
    * go to directory - RSA-encryption-project/src
