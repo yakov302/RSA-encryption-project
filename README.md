@@ -21,8 +21,8 @@ Estimated time to generate RSA keys:
   
 Requirements: c++ compiler
   
-1. Run the application:   
-          go to directory - RSA-encryption-project/src
-          run command - make check.
+Run the application:   
+   go to directory - RSA-encryption-project/src
+   run command - make check.
 
  
