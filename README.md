@@ -35,7 +35,7 @@ RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used
 
 ### Steps 
 **1.** Choose two large prime numbers (p and q)
-2. Calculate n = p*q and z = (p-1)(q-1)
+**2.** Calculate n = p*q and z = (p-1)(q-1)
 3. Choose a number e where 1 < e < z.
 4. Calculate d = e-1mod(p-1)(q-1)
 5. You can bundle private key pair as (n,d)
