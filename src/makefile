@@ -6,7 +6,7 @@ CC = $(CXX)
 WARNINGS = -pedantic
 DEBUG = -g3
 CXX_STD = c++17
-LDLIBS   = 
+LDLIBS  = -lpthread 
 
 CXXFLAGS = $(WARNINGS) $(DEBUG) -std=$(CXX_STD) $(LDLIBS)
 CPPFLAGS = -I$(INC_DIR)
