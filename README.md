@@ -21,7 +21,7 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
    * 4096 bits - about
   
 ### Requirements
-   c++ compiler
+   - c++ compiler
   
 ### Run the application   
    * go to directory - RSA-encryption-project/src
@@ -42,10 +42,10 @@ RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used
 6. You can bundle public key pair as (n,e)
 
 ### Encrypt
-c = m^e mod (n)
+ - c = m^e mod (n)
 
 ### Decrypt
-m = c^d mod (n)
+ - m = c^d mod (n)
 
 ### Example
 
