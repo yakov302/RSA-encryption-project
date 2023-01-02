@@ -13,7 +13,7 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
 ### Estimated time to generate RSA keys
    * 32   bits - about 3 seconds
    * 64   bits - about 25 seconds
-   * 128  bits - about 
+   * 128  bits - about 3 minutes
    * 256  bits - about 10 minutes
    * 512  bits - about
    * 1024 bits - about
