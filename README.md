@@ -19,7 +19,7 @@ c = m^e mod (n)
 ### Decrypt function
 m = c^d mod (n)
 
-### RSA Algorithm Example
+### Example
 
 * Choose p = 3 and q = 11
 * Compute n = p * q = 3 * 11 = 33
