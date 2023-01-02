@@ -22,7 +22,7 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
   
 ### Requirements
    - linux (Ubuntu) CLI
-   - c++ compiler
+   - C++ compiler
   
 ### Run the application   
    * go to directory - RSA-encryption-project/src
