@@ -21,8 +21,7 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
    * 4096 bits - about
   
 ### Requirements
-   > c++ compiler
-   > ghdgdg
+   - c++ compiler
   
 ### Run the application   
    * go to directory - RSA-encryption-project/src
@@ -35,8 +34,8 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
 RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used for secure data transmission. The acronym "RSA" comes from the surnames of Ron Rivest, Adi Shamir and Leonard Adleman, who publicly described the algorithm in 1977.
 
 ### Steps 
-**1. Choose two large prime numbers (p and q)
-**2. Calculate n = p*q and z = (p-1)(q-1)
+1. Choose two large prime numbers (p and q)
+2. Calculate n = p*q and z = (p-1)(q-1)
 3. Choose a number e where 1 < e < z.
 4. Calculate d = e-1mod(p-1)(q-1)
 5. You can bundle private key pair as (n,d)
