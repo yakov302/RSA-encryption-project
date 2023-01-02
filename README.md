@@ -10,22 +10,24 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
   5. Decrypt cypher code using private RSA key.
 
 ## Estimated time to generate RSA keys
-  * 32   bits - about 3 seconds
-  * 64   bits - about 25 seconds
-  * 128  bits - about 
-  * 256  bits - about 10 minutes
-  * 512  bits - about
-  * 1024 bits - about
-  * 2048 bits - about
-  * 4096 bits - about
+   32   bits - about 3 seconds
+   64   bits - about 25 seconds
+   128  bits - about 
+   256  bits - about 10 minutes
+   512  bits - about
+   1024 bits - about
+   2048 bits - about
+   4096 bits - about
   
 ## Requirements
-  * c++ compiler
+   c++ compiler
   
 ## Run the application   
 ```bash
    go to directory - RSA-encryption-project/src
-   run command - make check.
+   run command:
+```bash
+   make check
 ```
 
 ## License
