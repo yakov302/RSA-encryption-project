@@ -10,6 +10,14 @@ Application features:
   5. Decrypt cypher code using private RSA key.
 
 Estimated time to generate RSA keys:
-  * 32 bits - about 3 seconds.
+  * 32   bits - about 3 seconds.
+  * 64   bits - about 25 seconds.
+  * 128  bits - about 
+  * 256  bits - about 10 minutes.
+  * 512  bits - about
+  * 1024 bits - about
+  * 2048 bits - about
+  * 4096 bits - about
+
 
  
