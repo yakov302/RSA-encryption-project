@@ -23,8 +23,8 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
    c++ compiler
   
 ## Run the application   
-   a. go to directory - RSA-encryption-project/src
-   b. run command:
+   * go to directory - RSA-encryption-project/src
+   * run command:
 ```bash
    make check
 ```
