@@ -22,6 +22,7 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
   
 ### Requirements
    > c++ compiler
+   > ghdgdg
   
 ### Run the application   
    * go to directory - RSA-encryption-project/src
