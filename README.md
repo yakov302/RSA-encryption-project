@@ -7,9 +7,9 @@ RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used
 
 ### Steps in RSA Algorithm
 1. Choose two large prime numbers (p and q)
-2. Calculate n = p*q and z = (p-1)(q-1)
+2. Calculate n = p*q and φ = (p-1)(q-1)
 3. Choose a number e where 1 < e < z.
-4. Calculate d = e-1mod(p-1)(q-1)
+4. Calculate d = (e-1)mod φ
 5. You can bundle private key pair as (n,d)
 6. You can bundle public key pair as (n,e)
 
@@ -30,7 +30,7 @@ m = c^d mod (n)
 * Private key is (d, n) => (3, 33)
 * The encryption of m = 2 is c = 27 % 33 = 29
 * The decryption of c = 29 is m = 293 % 33 = 2
-* 
+
 ## Application 
 ### features
   1. Generate random BigInt with number of bits as your choice.
