@@ -18,6 +18,11 @@ Estimated time to generate RSA keys:
   * 1024 bits - about
   * 2048 bits - about
   * 4096 bits - about
-
+  
+Requirements: c++ compiler
+  
+1. Run the application:   
+          go to directory - RSA-encryption-project/src
+          run command - make check.
 
  
