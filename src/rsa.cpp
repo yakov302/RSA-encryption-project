@@ -17,6 +17,8 @@ std::vector<int> prime_numbers_vector;
 namespace impl
 {
 
+extern void delete_progress_bar();
+
 void sieve_of_eratosthenes_generator()
 {
     prime_numbers_vector.reserve(PRIME_NUMBERS_POOL_RANGE/2);
@@ -305,8 +307,7 @@ void generate_keys(int num_of_bits)
         d = impl::extended_euclidean(phi, e);
     }
 
-    stop = true;
-    usleep(100000);
+    impl::delete_progress_bar();
     std::cout << "\n" << GREEN; 
     std::cout << "Public key \n" << "e: " << e << "\nn: " << n << "\n";
     std::cout << "\nPrivate key \n" << "d: " << d << "\nn: " << n << "\n";
@@ -317,6 +318,7 @@ BigInt encrypt(BigInt& e, BigInt& n, char* message)
     BigInt number_message = impl::convert_message_to_big_int(message);
     if(number_message.num_of_digits() > n.num_of_digits())
     {
+        impl::delete_progress_bar();
         std::cout << RED << "\nRSA ERROR: message too long for key (n)" << NORMAL << "\n";
         return BigInt();
     }
