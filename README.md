@@ -15,8 +15,8 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
    * 64   bits - about 25 seconds
    * 128  bits - about 5 minutes
    * 256  bits - about 45 minutes
-   * 512  bits - about 1.5 hours
-   * 1024 bits - about 4.5 hours
+   * 512  bits - about 4.5 hours
+   * 1024 bits - about 
    * 2048 bits - about
    * 4096 bits - about
   
