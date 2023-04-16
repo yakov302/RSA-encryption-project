@@ -17,8 +17,8 @@ An end-to-end implementation of RSA encryption that includes: full implementatio
    * 256  bits - about 45 minutes
    * 512  bits - about 4.5 hours
    * 1024 bits - about 1 week
-   * 2048 bits - about
-   * 4096 bits - about
+   * 2048 bits - unknown
+   * 4096 bits - unknown
   
 ### Requirements
    - linux (Ubuntu) CLI
